@@ -1,14 +1,14 @@
 import { createAction, handleActions } from 'redux-actions';
 import produce from 'immer';
 import { takeLatest } from 'redux-saga/effects';
-import createRequestSaga, { createReauestActionTypes } from '../lib/createRequestSaga';
+import createRequestSaga, { createRequestActionTypes } from '../lib/createRequestSaga';
 import * as authAPI from '../lib/api/auth';
 
 const CHANGE_FIELD = 'auth/CHANGE_FIELD';
 const INITIALIZE_FORM ='auth/INITIALIZE_FORM';
 
-const [REGISTER, REGISTER_SUCCESS, REGISTER_FAILURE] = createReauestActionTypes('auth/REGISTER');
-const [LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE] = createReauestActionTypes('auth/LOGIN');
+const [REGISTER, REGISTER_SUCCESS, REGISTER_FAILURE] = createRequestActionTypes('auth/REGISTER');
+const [LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE] = createRequestActionTypes('auth/LOGIN');
 
 export const changeField = createAction(
     CHANGE_FIELD,
