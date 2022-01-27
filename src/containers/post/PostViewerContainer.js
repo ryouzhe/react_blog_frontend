@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { readPost, unloadPost } from '../../modules/post';
-import PostViewer from '../../components/post/PostViewer';
+import PostViewer from '../../components/posts/PostViewer';
 
 const PostViewerContainer = () => {
     const { postId } = useParams();

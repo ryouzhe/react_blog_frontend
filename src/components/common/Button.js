@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 import palette from '../../lib/styles/palette';
-import { useNavigate } from 'react-router-dom';
 
 const buttonStyle = css`
   border: none;
@@ -13,10 +12,12 @@ const buttonStyle = css`
   color: white;
   outline: none;
   cursor: pointer;
+ 
   background: ${palette.gray[8]};
   &:hover {
     background: ${palette.gray[6]};
   }
+
   ${props =>
     props.fullWidth &&
     css`
@@ -25,6 +26,7 @@ const buttonStyle = css`
       width: 100%;
       font-size: 1.125rem;
     `}
+
   ${props =>
     props.cyan &&
     css`
@@ -33,6 +35,12 @@ const buttonStyle = css`
         background: ${palette.cyan[4]};
       }
     `}
+  
+  &:disabled {
+    background: ${palette.gray[3]};
+    color: ${palette.gray[5]};
+    cursor: not-allowed;
+  }
 `;
 
 const StyledButton = styled.button`
